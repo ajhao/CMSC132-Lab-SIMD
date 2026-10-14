@@ -48,7 +48,7 @@ The loop in `poly.c` is **identical** in both. The only difference is whether th
 
 ---
 
-## Task 0: Warm-up *(≈ 20 min)*
+## Task 0: Warm-up
 Run the baseline and the SIMD build once:
 ```
 ./scalar
@@ -63,7 +63,7 @@ Each prints a **best time** (fastest of several runs) and a **checksum**.
 
 ---
 
-## Task 1: Measure the speedup *(≈ 25 min)*
+## Task 1: Measure the speedup
 Run each program **3 times** and take the best time you see for each.
 Compute: **speedup = scalar_time ÷ vector_time**.
 
@@ -78,7 +78,7 @@ plus one sentence naming *what the hardware did* to earn that speedup.
 
 ---
 
-## Task 2: Prove it actually vectorized *(≈ 40 min)*
+## Task 2: Prove it actually vectorized
 A speedup is only convincing if you can *see* the vector instructions. Two pieces of evidence:
 
 **(a) The compiler's report.** Rebuild the vector program and read the messages the compiler prints:
@@ -98,7 +98,7 @@ Vector ops carry a **lane marker** - on ARM a `.4s`/`.2d` suffix or a `v` regist
 
 ---
 
-## Task 3: Lanes vs. data type *(≈ 40 min)*
+## Task 3: Lanes vs. data type
 A vector register is a fixed number of **bits**. So it holds **twice as many `float`s as `double`s** (e.g. 4 floats vs 2 doubles on ARM NEON; 8 vs 4 on x86 AVX). Fewer lanes → less speedup.
 
 1. **Predict first (write it down):** if you switch from `float` to `double`, what should happen to the vector speedup?
@@ -121,7 +121,7 @@ A vector register is a fixed number of **bits**. So it holds **twice as many `fl
 
 ---
 
-## Task 4: Break the vectorizer *(≈ 40 min)*
+## Task 4: Break the vectorizer
 Vectorization needs the iterations to be **independent**. `scan.c` deliberately makes each iteration depend on the previous one:
 ```c
 y[i] = a * y[i-1] + x[i];   // needs the result of iteration i-1
@@ -136,7 +136,7 @@ make scan
 
 ---
 
-## Wrap-up write-up *(≈ 15 min)*
+## Wrap-up write-up
 Answer briefly, in your own words:
 1. You changed no source between `scalar` and `vector` in Task 1 what gave the speedup?
 2. How did you *verify* (not just assume) that vectorization happened?
