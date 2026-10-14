@@ -1,0 +1,6 @@
+.DS_Store
+# compiled binaries
+Sample code/scalar
+Sample code/vector
+Sample code/scan
+*.o
