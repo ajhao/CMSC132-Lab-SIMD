@@ -16,9 +16,6 @@ By the end you can:
 3. Explain why **`double` is slower than `float`** under SIMD (half as many lanes per register).
 4. Recognize a **loop-carried dependency** and explain why it cannot be vectorized.
 
-### Prerequisites
-S14 (vector/SIMD concept, lanes). Comfort building and running a C program from the terminal.
-
 ---
 
 ## What's in your folder (`Sample code/`)
