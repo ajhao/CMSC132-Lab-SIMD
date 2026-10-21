@@ -29,7 +29,7 @@ else
   REPORT := -Rpass=loop-vectorize -Rpass-missed=loop-vectorize
 endif
 
-COMMON := -std=c11 -Wall
+COMMON := -std=c11 -Wall -D_POSIX_C_SOURCE=199309L
 
 .PHONY: all clean
 all: scalar vector scan
